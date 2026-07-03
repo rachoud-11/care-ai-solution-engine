@@ -1,0 +1,221 @@
+body{
+
+    margin:0;
+
+    background:#f2f2f2;
+
+    font-family:Segoe UI,Tahoma,sans-serif;
+
+}
+
+.container{
+
+    width:95%;
+
+    margin:20px auto;
+
+    background:white;
+
+    border:1px solid #d3d3d3;
+
+}
+
+.header{
+
+    background:#ffffff;
+
+    border-bottom:1px solid #d3d3d3;
+
+    padding:15px;
+
+}
+
+.summary{
+
+    background:#efefef;
+
+    padding:10px 15px;
+
+    border-bottom:1px solid #d3d3d3;
+
+}
+
+.summary h3{
+
+    margin:0;
+
+    font-size:16px;
+
+    font-weight:500;
+
+}
+
+.details-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr 1fr;
+
+    gap:30px;
+
+    padding:20px;
+
+}
+
+.details-grid p{
+
+    margin:8px 0;
+
+    font-size:14px;
+
+}
+
+.description{
+
+    padding:0 20px 20px;
+
+}
+
+.description textarea{
+
+    width:100%;
+
+    height:90px;
+
+    resize:none;
+
+    border:1px solid #cfcfcf;
+
+    padding:10px;
+
+    font-size:14px;
+
+    background:white;
+
+}
+
+.tabs{
+
+    display:flex;
+
+    border-top:1px solid #d3d3d3;
+
+    border-bottom:1px solid #d3d3d3;
+
+    background:#fafafa;
+
+}
+
+.tabs button{
+
+    border:none;
+
+    background:none;
+
+    padding:14px 18px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+}
+
+.tabs button:hover{
+
+    background:#eeeeee;
+
+}
+
+.tab-content{
+
+    padding:20px;
+
+}
+
+.empty-box{
+
+    border:2px dashed #d0d0d0;
+
+    text-align:center;
+
+    padding:60px;
+
+    background:#fafafa;
+
+}
+
+.aiButton{
+
+    background:#0078D4;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+.aiButton:hover{
+
+    background:#005fa3;
+
+}
+
+.loading{
+
+    padding:40px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    color:#0078D4;
+
+}
+
+.ai-card{
+
+    border-left:6px solid #0078D4;
+
+    background:#f9fcff;
+
+    padding:20px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.ai-card h3{
+
+    margin-top:0;
+
+}
+
+.ai-card h4{
+
+    color:#0078D4;
+
+    margin-bottom:5px;
+
+}
+
+.confidence{
+
+    background:#28a745;
+
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:4px;
+
+    font-weight:bold;
+
+}

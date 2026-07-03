@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem Detail</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/g3.css') }}">
+
+    <script>
+        function showAIRecommendation() {
+
+            document.getElementById("aiPlaceholder").style.display = "none";
+            document.getElementById("loading").style.display = "block";
+
+            setTimeout(function () {
+
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("aiResult").style.display = "block";
+
+            }, 2000);
+
+        }
+
+        function openTab(tabName) {
+
+            var tabs = document.getElementsByClassName("tab-content");
+
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+
+            document.getElementById(tabName).style.display = "block";
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h2>Problem Detail</h2>
+
+    </div>
+
+    <div class="summary">
+
+        <h3>Problem Summary - {{ problem.problem_id }}</h3>
+
+    </div>
+
+    <div class="details-grid">
+
+        <div>
+
+            <p><b>Job Instance Id :</b> {{ problem.job_instance }}</p>
+            <p><b>Job Name :</b> {{ problem.job_name }}</p>
+            <p><b>Owner :</b> {{ problem.owner }}</p>
+
+        </div>
+
+        <div>
+
+            <p><b>Problem Id :</b> {{ problem.problem_id }}</p>
+            <p><b>Error Code :</b> {{ problem.error_code }}</p>
+
+        </div>
+
+        <div>
+
+            <p><b>Client :</b> {{ problem.client }}</p>
+            <p><b>Property :</b> {{ problem.property }}</p>
+            <p><b>Property Code :</b> {{ problem.property_code }}</p>
+
+        </div>
+
+    </div>
+
+    <div class="description">
+
+        <h3>Problem Description</h3>
+
+        <textarea readonly>{{ problem.description }}</textarea>
+
+    </div>
+
+    <div class="tabs">
+
+        <button onclick="openTab('notes')">Notes</button>
+        <button onclick="openTab('solutions')">Solutions</button>
+        <button onclick="openTab('steps')">Execution Steps</button>
+        <button onclick="openTab('parameters')">Execution Parameters</button>
+        <button onclick="openTab('context')">Execution Context</button>
+
+    </div>
+
+    <div id="notes" class="tab-content">
+
+        <h3>Notes</h3>
+
+        <p>No notes available.</p>
+
+    </div>
+
+    <div id="solutions" class="tab-content" style="display:block;">
+
+        <h3>Solutions</h3>
+
+        <div id="aiPlaceholder">
+
+            <div class="empty-box">
+
+                No AI recommendation available.
+
+                <br><br>
+
+                <button class="aiButton" onclick="showAIRecommendation()">
+
+                    ✨ Analyze with AI
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div id="loading" style="display:none;">
+
+            <div class="loading">
+
+                🤖 AI is analyzing the failed job...
+
+            </div>
+
+        </div>
+
+        <div id="aiResult" style="display:none;">
+
+            <div class="ai-card">
+
+                <h3>🤖 AI Recommendation</h3>
+
+                <hr>
+
+                <h4>Issue Summary</h4>
+
+                <p>
+                    Connection pool was shut down while processing the recommendation job.
+                </p>
+
+                <h4>Likely Root Cause</h4>
+
+                <p>
+                    Database connectivity became unavailable during execution.
+                </p>
+
+                <h4>Recommended Steps</h4>
+
+                <ul>
+
+                    <li>Verify database connectivity.</li>
+
+                    <li>Restart affected service.</li>
+
+                    <li>Retry the failed job.</li>
+
+                    <li>Review application logs.</li>
+
+                </ul>
+
+                <h4>Related KB Articles</h4>
+
+                <ul>
+
+                    <li>KB-102 : Connection Pool Shutdown</li>
+
+                    <li>KB-211 : JDBC Connectivity Issues</li>
+
+                </ul>
+
+                <h4>Confidence</h4>
+
+                <span class="confidence">94%</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="steps" class="tab-content">
+
+        <p>No execution steps available.</p>
+
+    </div>
+
+    <div id="parameters" class="tab-content">
+
+        <p>No execution parameters available.</p>
+
+    </div>
+
+    <div id="context" class="tab-content">
+
+        <p>No execution context available.</p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
