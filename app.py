@@ -73,18 +73,14 @@ def problems():
 @app.route("/problem/<problem_id>")
 def problem_detail(problem_id):
 
-    problem = Problem.query.filter_by(
+    problem = Problem.query.filter_by(problem_id=problem_id).first()
 
-        problem_id=problem_id
-
-    ).first()
+    if not problem:
+        return "Problem not found",404
 
     return render_template(
-
         "problem_detail.html",
-
         problem=problem
-
     )
 
 

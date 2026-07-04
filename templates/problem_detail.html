@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Problem Detail
+
+{% endblock %}
+
+{% block body %}
+
+<div class="problem-container">
+
+    <div class="problem-title">
+
+        Problem Detail
+
+    </div>
+
+    <div class="summary-header">
+
+        ▼ Problem Summary - {{ problem.problem_id }}
+
+    </div>
+
+    <div class="problem-grid">
+
+        <div>
+
+            <p><strong>Job Instance Id :</strong> {{ problem.job_instance_id }}</p>
+
+            <p><strong>Job Name :</strong> {{ problem.job_name }}</p>
+
+            <p><strong>Step Name :</strong> {{ problem.step_name }}</p>
+
+            <p><strong>System Mode :</strong> {{ problem.system_mode }}</p>
+
+            <p><strong>Creation Date :</strong> {{ problem.creation_date }}</p>
+
+        </div>
+
+        <div>
+
+            <p><strong>Problem Id :</strong> {{ problem.problem_id }}</p>
+
+            <p><strong>Owner :</strong> {{ problem.owner }}</p>
+
+            <p><strong>Closed Date :</strong> {{ problem.closed_date }}</p>
+
+            <p><strong>Duration :</strong> {{ problem.duration }}</p>
+
+            <p><strong>Error Code :</strong> {{ problem.error_code }}</p>
+
+            <p><strong>Node :</strong> {{ problem.node }}</p>
+
+        </div>
+
+        <div>
+
+            <p><strong>Client :</strong> {{ problem.client_name }}</p>
+
+            <p><strong>Property :</strong> {{ problem.property_name }}</p>
+
+        </div>
+
+    </div>
+
+    <div class="description-section">
+
+        <label>
+
+            <strong>Problem Description</strong>
+
+        </label>
+
+        <textarea readonly>
+
+{{ problem.problem_description }}
+
+        </textarea>
+
+    </div>
+
+    <div class="toolbar">
+
+        <button class="btn btn-light">
+
+            📎
+
+        </button>
+
+        <button class="btn btn-light">
+
+            📄
+
+        </button>
+
+        <button class="btn btn-light">
+
+            🔄
+
+        </button>
+
+    </div>
+
+    <ul class="nav nav-tabs" id="problemTabs">
+
+        <li class="nav-item">
+
+            <button class="nav-link active"
+
+                    data-bs-toggle="tab"
+
+                    data-bs-target="#notes">
+
+                Notes
+
+            </button>
+
+        </li>
+
+        <li class="nav-item">
+
+            <button class="nav-link"
+
+                    data-bs-toggle="tab"
+
+                    data-bs-target="#solutions">
+
+                Solutions
+
+            </button>
+
+        </li>
+
+        <li class="nav-item">
+
+            <button class="nav-link"
+
+                    data-bs-toggle="tab"
+
+                    data-bs-target="#steps">
+
+                Execution Steps
+
+            </button>
+
+        </li>
+
+    </ul>
+
+    <div class="tab-content">
+
+        <div class="tab-pane fade show active p-3"
+
+             id="notes">
+
+            No notes available.
+
+        </div>
+
+        <div class="tab-pane fade p-3"
+
+             id="solutions">
+
+            <div class="alert alert-warning">
+
+                No solution available for this issue.
+
+            </div>
+
+            <button class="btn btn-primary">
+
+                🤖 Analyze with AI
+
+            </button>
+
+        </div>
+
+        <div class="tab-pane fade p-3"
+
+             id="steps">
+
+            Execution Steps will appear here.
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
